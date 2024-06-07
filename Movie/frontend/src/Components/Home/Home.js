@@ -6,7 +6,6 @@ import rect1 from "../../assets/Rectangle1.png";
 import rect2 from "../../assets/Rectangle2.png";
 import rect3 from "../../assets/Rectangle3.png";
 import rect4 from "../../assets/Rectangle4.png";
-import { API_BASE_URL } from "../../config.js"
 import './Home.css';
 
 function Home() {
@@ -16,7 +15,7 @@ function Home() {
     useEffect(() => {
         const fetchMovies = async () => {
             try {
-                const response = await axios.get(`${API_BASE_URL}/api/movies`);
+                const response = await axios.get(`https://movie-backend-6mwa.onrender.com/api/movies`);
                 setMovies(response.data);
                 setRandomMovie(response.data[Math.floor(Math.random() * response.data.length)]);
             } catch (err) {
