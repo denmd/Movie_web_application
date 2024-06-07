@@ -5,12 +5,17 @@ import Larrow from "../../assets/larrow.png"
 import SearchLogo from "../../assets/search-lg.png"
 import Moviecards from '../../Components/Moviecards/Moviecards';
 import CrossLogo from "../../assets/cross.png"
+import SearchResults from '../../Components/Search/SearchResults';
 
 const Favorite = () => {
   const [favorites, setFavorites] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [mainsearchResults, setMainSearchResults] = useState([]);
 
+  const handleSetSearchResults = (results) => {
+    setMainSearchResults(results);
+  };
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
     setFavorites(storedFavorites);
@@ -37,7 +42,10 @@ const Favorite = () => {
 
   return (
     <div className="favorites-page">
-      <Header/>
+      <Header onReceiveSearchResults={handleSetSearchResults}/>
+      {mainsearchResults && mainsearchResults.length > 0 ? (
+        <SearchResults results={mainsearchResults} />
+      ) :(
       <div className="favorite-body">
         <div className="body-head">
           <div className="title-icon">
@@ -70,6 +78,7 @@ const Favorite = () => {
           )}
         </div>
       </div>
+      )}
     </div>
   );
 };

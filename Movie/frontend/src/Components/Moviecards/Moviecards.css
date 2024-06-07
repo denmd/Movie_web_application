@@ -1,5 +1,5 @@
 .movie-poster {
-    width: 100%;
+    width:100%;
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap to the next line */
@@ -76,3 +76,24 @@ margin-left: 0;
 }
 
 
+@media screen and (max-width: 1200px) {
+    .fav-movie-card {
+        width: calc(33.333% - 20px); /* Adjust width for 3 columns */
+        height: 400px; /* Reduce height for smaller screens */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .fav-movie-card {
+        width: calc(50% - 20px); /* Adjust width for 2 columns */
+        height: 350px; /* Reduce height for smaller screens */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .fav-movie-card {
+        width: calc(100% - 20px); /* Adjust width for 1 column */
+        height: 300px; /* Reduce height for smaller screens */
+        margin-left: 10px; /* Adjust margin for better spacing */
+    }
+}

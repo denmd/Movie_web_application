@@ -1,37 +1,28 @@
+
 import React, { useState } from 'react';
-import axios from 'axios';
 import Header from '../Components/Header/Header';
 import Home from '../Components/Home/Home';
 import Rowpost from '../Components/Rowpost/Rowpost';
 import SearchResults from '../Components/Search/SearchResults';
+import './Mainpage.css'
+import axios from 'axios';
 
 function Mainpage() {
-  const [query, setQuery] = useState(""); 
-  
   const [searchResults, setSearchResults] = useState([]);
 
-  
-  const handleSearch = async (query) => {
-    try {
-      const response = await axios.get(`http://localhost:8000/api/movies/search?title=${query}`);
-      console.log(response )
-      setSearchResults(response.data);
-    } catch (error) {
-      console.error('Error fetching search results:', error);
-
-    }
+  const handleSetSearchResults = (results) => {
+    setSearchResults(results);
   };
 
   return (
-    <div className="App">
-      <Header query={query} setQuery={setQuery}  onSearch={handleSearch} />
+    <div className="main-element">
+      <Header onReceiveSearchResults={handleSetSearchResults} /> 
       {searchResults && searchResults.length > 0 ? (
-          <SearchResults results={searchResults} />
-
+        <SearchResults results={searchResults} />
       ) : (
         <>
-        <Home />
-        <Rowpost />
+          <Home />
+          <Rowpost />
         </>
       )}
     </div>

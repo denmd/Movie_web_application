@@ -1,6 +1,6 @@
 .row {
     margin-top: 0;
-    min-height: 80vh;
+    min-height: 100vh;
     height: auto;
     margin-left: 20px;
     color:  #111827;;
@@ -12,15 +12,16 @@
     line-height: 0px;
 }
 .row-post{
+
 display: flex;
 flex-wrap: wrap;
-justify-content: space-between; /* Adjust as needed */
+justify-content: space-between; 
 
 }
 .posters {
     width: 90%;
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    flex-wrap: wrap;
     text-align: start;
     line-height: 0;
     
@@ -30,22 +31,23 @@ justify-content: space-between; /* Adjust as needed */
 }
 
 .movie-card {
-    margin-top: 4%;
-    width: calc(25% - 50px); 
+    margin-top: 5%;
+    width: calc(25% - 40px); 
     border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 450px; 
+    flex-grow: 1;
     box-sizing: border-box; 
+    margin-left: 20px;
 }
 
 .banner {
     height: 100%;
     display: flex;
     justify-content: flex-end;
-
     border-radius: 12px ; 
     background-size: cover; 
     background-position: center;
@@ -89,7 +91,27 @@ justify-content: space-between; /* Adjust as needed */
 }
 
 
+@media (max-width: 419px) {
+    .posters {
+        flex-direction: column;
+    }
 
+    .movie-card {
+        width: 100%; 
+        height: auto; 
+        margin-top: 2%;
+    }
+}
+
+@media (max-width: 920px) {
+
+    .movie-card {
+        width:  calc(25% - 1px); 
+        height: 400px; 
+        margin-top: 3%;
+      
+    }
+}
 
 
 
@@ -99,8 +121,11 @@ justify-content: space-between; /* Adjust as needed */
         flex-direction: column;
     }
 
+    .banner{
+        background-size: contain; 
+    }
     .movie-card {
         width: 100%; 
-        height: auto; 
+        height: 400px; 
     }
 }
