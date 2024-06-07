@@ -99,5 +99,5 @@ npm test
 ## Hosted URL
 
 ```sh
-https://todoapp-6qiy.vercel.app/
+https://movie-web-application-one.vercel.app/
 ```
