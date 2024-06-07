@@ -17,6 +17,8 @@ This is a web application that interacts with a list of movies. It includes a ba
 
 - Frontend: React (Create React App), Axios
 - Backend: Node.js, Express
+- Render (for hosting Backend)
+- Vercel (for hosting frontend)
 
 
 ##  Prerequisites
