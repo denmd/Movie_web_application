@@ -1,20 +1,17 @@
 .header {
-  width: Fixed (1,440px)px;
+  width: 100%;
   height: 15px;
   padding: 32px 98px 32px 98px;
-  gap: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  opacity: 0px;
-  background-color: #FFFFFF;
+  background-color:#FFFFFF;
   
 }
 .search-content{
   width: Hug (648px)px;
   height: Hug (40px)px;
   gap: 24px;
-  opacity: 0px;
   display: flex;
   align-items: center;
   
@@ -22,7 +19,6 @@
 }
 .icon-title{
   height: Hug (32px)px;
-  opacity: 0px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -72,7 +68,6 @@
   gap: 8px;
   border: none;
   border-radius: 8px ;
-  opacity: 0px;
   background-color: #FF0059;
   color: #FFFFFF;
   display: flex;
@@ -88,7 +83,9 @@
 
 @media (max-width: 419px) {
  .header{
-  padding: 0;
+  align-items: center;
+  padding: 30px 15px 30px 15px;
+ 
  }
 .icon-title{
   gap: 3px;
@@ -108,12 +105,13 @@
       font-size: 10px;
 
   }
-  .favourites-button{
-      width: 90px;
-      height: 26px;
-      font-size: 8px;
-      
-  }
+  .favourites-button {
+    width: 80px;
+    height: 26px;
+    font-size: 10px;
+    gap:0;
+    padding: 8px 10px 8px 10px;
+}
 
  
 
