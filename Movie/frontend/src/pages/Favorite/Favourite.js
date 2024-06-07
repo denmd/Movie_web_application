@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import "./Favourite.css"
 import Header from '../../Components/Header/Header';
 import Larrow from "../../assets/larrow.png"
@@ -12,6 +13,7 @@ const Favorite = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [mainsearchResults, setMainSearchResults] = useState([]);
+  const navigate=useNavigate()
 
   const handleSetSearchResults = (results) => {
     setMainSearchResults(results);
@@ -39,6 +41,10 @@ const Favorite = () => {
     setSearchTerm(""); 
     setSearchResults(favorites); 
   };
+  const navigateHome = () => {
+    navigate('/'); 
+  };
+
 
   return (
     <div className="favorites-page">
@@ -49,7 +55,7 @@ const Favorite = () => {
       <div className="favorite-body">
         <div className="body-head">
           <div className="title-icon">
-            <div className="arraow-div"><img src={Larrow} alt="Back Arrow" /></div>
+            <div className="arraow-div" onClick={()=>navigateHome()}><img src={Larrow} alt="Back Arrow" /></div>
             <h2 className="favorites-title">My Favorites</h2>
           </div>
           <div className="fav-search-bar">
